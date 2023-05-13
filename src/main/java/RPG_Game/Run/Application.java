@@ -2,7 +2,7 @@ package RPG_Game.Run;
 
 import RPG_Game.Character.Character;
 import RPG_Game.Character.Select;
-import RPG_Game.StartMenu.StartGame;
+
 import RPG_Game.Town.TownMenu;
 
 import java.util.Scanner;
