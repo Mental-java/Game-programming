@@ -1,6 +1,6 @@
 package RPG_Game.Character;
 
-import RPG_Game.Town.TownMenu;
+
 
 import java.util.Scanner;
 
