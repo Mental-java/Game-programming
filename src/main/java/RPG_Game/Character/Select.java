@@ -1,7 +1,5 @@
 package RPG_Game.Character;
 
-
-
 import java.util.Scanner;
 
 public class Select {
@@ -30,14 +28,14 @@ public class Select {
     }
 
     private Character createA() {
-        return new Character("A", 100, 50, 20, 0, "궁");
+        return new Character("A", 100, 50, 20, 0,1, "궁");
     }
 
     private Character createB() {
-        return new Character("B", 120, 50, 20, 0, "극");
+        return new Character("B", 120, 50, 20, 0,1, "극");
     }
 
     private Character createC() {
-        return new Character("C", 140, 50, 20, 0, "기");
+        return new Character("C", 140, 50, 20, 0,1, "기");
     }
 }

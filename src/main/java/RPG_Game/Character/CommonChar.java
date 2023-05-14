@@ -6,13 +6,15 @@ public class CommonChar {
     protected int mana;
     protected int attack;
     protected int experience;
+    protected int level;
 
-    public CommonChar(String name, int health, int mana, int attack, int experience) {
+    public CommonChar(String name, int health, int mana, int attack, int experience,int level) {
         this.name = name;
         this.health = health;
         this.mana = mana;
         this.attack = attack;
         this.experience = experience;
+        this.level = level;
     }
 
     public void displayInfo() {
@@ -22,5 +24,6 @@ public class CommonChar {
         System.out.println("마나: " + mana);
         System.out.println("공격력: " + attack);
         System.out.println("경험치: " + experience);
+        System.out.println("레벨: "+level);
     }
 }
