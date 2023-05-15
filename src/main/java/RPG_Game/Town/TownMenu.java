@@ -17,11 +17,11 @@ public class TownMenu {
     private void resetmonster() {
         monsters = new Monster[5];
 
-        monsters[0] = new Monster("^모^", 50, 10);
-        monsters[1] = new Monster("^모2^", 70, 15);
-        monsters[2] = new Monster("^모3^", 90, 20);
-        monsters[3] = new Monster("^모4^", 110, 25);
-        monsters[4] = new Monster("보스몬스터", 130, 30);
+        monsters[0] = new Monster("^모^", 50, 10,30);
+        monsters[1] = new Monster("^모2^", 70, 15,50);
+        monsters[2] = new Monster("^모3^", 90, 20,70);
+        monsters[3] = new Monster("^모4^", 110, 25,90);
+        monsters[4] = new Monster("보스몬스터", 130, 30,110);
 
     }
 

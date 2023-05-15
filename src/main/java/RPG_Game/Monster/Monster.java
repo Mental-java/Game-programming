@@ -5,10 +5,13 @@ public class Monster {
     private int health;
     private int attack;
 
-    public Monster(String name, int health, int attack) {
+    private int experience;
+
+    public Monster(String name, int health, int attack,int experience) {
         this.name = name;
         this.health = health;
         this.attack = attack;
+        this.experience = experience;
     }
 
     public String getName() {
@@ -21,5 +24,9 @@ public class Monster {
 
     public int getAttack() {
         return attack;
+    }
+
+    public int getExperience() {
+        return experience;
     }
 }
