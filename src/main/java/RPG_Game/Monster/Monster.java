@@ -2,14 +2,15 @@ package RPG_Game.Monster;
 
 public class Monster {
     private String name;
-    private int health;
+    private int hp;
+    private int dp;
     private int attack;
-
     private int experience;
 
-    public Monster(String name, int health, int attack,int experience) {
+    public Monster(String name, int hp, int dp, int attack, int experience) {
         this.name = name;
-        this.health = health;
+        this.hp = hp;
+        this.dp = dp;
         this.attack = attack;
         this.experience = experience;
     }
@@ -18,8 +19,8 @@ public class Monster {
         return name;
     }
 
-    public int getHealth() {
-        return health;
+    public int gethp() {
+        return hp;
     }
 
     public int getAttack() {

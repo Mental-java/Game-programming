@@ -4,8 +4,8 @@ public class Character extends CommonChar {
     private String specialAbility;
 
 
-    public Character(String name, int health, int mana, int attack, int experience,int level, String specialAbility) {
-        super(name, health, mana, attack, experience, level);
+    public Character(String name, int hp, int mp, int dp, int attack, int experience, int level, int money) {
+        super(name, hp, mp, dp, attack, experience, level, money);
         super.displayInfo();
         this.specialAbility = specialAbility;
     }

@@ -28,14 +28,15 @@ public class Select {
     }
 
     private Character createA() {
-        return new Character("A", 100, 50, 20, 0,1, "궁");
+
+        return new Character("A", 100, 0,50, 20, 0,1, 30);
     }
 
     private Character createB() {
-        return new Character("B", 120, 50, 20, 0,1, "극");
+        return new Character("B", 120, 0,50, 20, 0,1, 30);
     }
 
     private Character createC() {
-        return new Character("C", 140, 50, 20, 0,1, "기");
+        return new Character("C", 140, 0,50, 20, 0,1, 30);
     }
 }
