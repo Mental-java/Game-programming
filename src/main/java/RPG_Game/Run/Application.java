@@ -13,7 +13,7 @@ public class Application {
 
         do{
             Scanner sc = new Scanner(System.in);
-            System.out.println("****************** 게임 ***********************");
+            System.out.println("****************** JJHRPG ***********************");
             System.out.println("1. 게임 시작");
             System.out.println("2. 게임 종료");
             System.out.print("메뉴 선택 : ");
