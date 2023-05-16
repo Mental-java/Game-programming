@@ -29,7 +29,7 @@ public class Select {
 
     private Character createA() {
         Scanner sc = new Scanner(System.in);
-        Character ch = new Character("A", 100, 0,50, 20, 0,1, 30);
+        Character ch = new Character("A", 100, 0,0, 20, 0,1, 30,0);
 
         System.out.print("확실합니까? (확인 : 1, 취소 : 2) : ");
         int real = sc.nextInt();
@@ -43,7 +43,7 @@ public class Select {
 
     private Character createB() {
         Scanner sc = new Scanner(System.in);
-        Character ch = new Character("B", 120, 0,50, 20, 0,1, 30);
+        Character ch = new Character("B", 120, 0,0, 20, 0,1, 30,0);
 
         System.out.print("확실합니까? (확인 : 1, 취소 : 2) : ");
         int real = sc.nextInt();
@@ -58,7 +58,7 @@ public class Select {
 
     private Character createC() {
         Scanner sc = new Scanner(System.in);
-        Character ch = new Character("C", 140, 0,50, 20, 0,1, 30);
+        Character ch = new Character("C", 140, 0,0, 20, 0,1, 30,0);
 
         System.out.print("확실합니까? (확인 : 1, 취소 : 2) : ");
         int real = sc.nextInt();
