@@ -8,7 +8,7 @@ import RPG_Game.Town.TownMenu;
 import java.util.Scanner;
 
 public class Application {
-
+//이주성 테스트
     public static void main(String[] args) {
 
         do{
