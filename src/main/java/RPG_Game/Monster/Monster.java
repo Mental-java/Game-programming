@@ -1,11 +1,11 @@
 package RPG_Game.Monster;
 
 public class Monster {
-    private String name;
-    private int hp;
-    private int dp;
-    private int attack;
-    private int experience;
+    public String name;
+    public int hp;
+    public int dp;
+    public int attack;
+    public int experience;
 
     public Monster(String name, int hp, int dp, int attack, int experience) {
         this.name = name;
