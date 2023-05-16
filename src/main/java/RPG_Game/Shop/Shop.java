@@ -8,6 +8,7 @@ public class Shop {
 
     private Character character;
 
+
     public Shop(Character character) {
         this.character = character;
     }
@@ -20,7 +21,7 @@ public class Shop {
             System.out.println("2. 물약(체력 +10) 구매하기  : 10원");
             System.out.println("3. 레벨업 효과음(오예~) 구매하기 : 50원");
             System.out.println("4. 마을로 돌아가기");
-            System.out.println("보유 잔액 : " + character.getMoney());
+            System.out.println(">> 보유 잔액 : " + character.getMoney() + "남은 물약 : " + "무기 레벨 : ");
             System.out.print("메뉴 선택: ");
             int menuNum = scanner.nextInt();
 
