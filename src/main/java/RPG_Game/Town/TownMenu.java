@@ -3,7 +3,7 @@ package RPG_Game.Town;
 import RPG_Game.BattleField.GoBattle;
 import RPG_Game.Character.Character;
 import RPG_Game.Monster.Monster;
-
+import RPG_Game.Shop.Shop;
 import java.util.Scanner;
 
 public class TownMenu {
@@ -45,7 +45,8 @@ public class TownMenu {
                     dunjun.enterDungeon();
                     break;
                 case 2:
-                    shop();
+                    Shop shop = new Shop(character);
+                    shop.shop();
                     break;
                 case 3:
                     System.out.println("캐릭터 특성창을 보여줍니다.");
