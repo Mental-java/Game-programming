@@ -28,15 +28,47 @@ public class Select {
     }
 
     private Character createA() {
+        Scanner sc = new Scanner(System.in);
+        Character ch = new Character("A", 100, 0,50, 20, 0,1, 30);
 
-        return new Character("A", 100, 0,50, 20, 0,1, 30);
+        System.out.print("확실합니까? (확인 : 1, 취소 : 2) : ");
+        int real = sc.nextInt();
+        if(real == 1){
+           return ch;
+        }else if(real == 2){
+            return makingCharacter();
+        }
+        return makingCharacter();
     }
 
     private Character createB() {
-        return new Character("B", 120, 0,50, 20, 0,1, 30);
+        Scanner sc = new Scanner(System.in);
+        Character ch = new Character("B", 120, 0,50, 20, 0,1, 30);
+
+        System.out.print("확실합니까? (확인 : 1, 취소 : 2) : ");
+        int real = sc.nextInt();
+        if(real == 1){
+            return ch;
+        }else if(real == 2){
+            return makingCharacter();
+        }
+        return makingCharacter();
+
     }
 
     private Character createC() {
-        return new Character("C", 140, 0,50, 20, 0,1, 30);
+        Scanner sc = new Scanner(System.in);
+        Character ch = new Character("C", 140, 0,50, 20, 0,1, 30);
+
+        System.out.print("확실합니까? (확인 : 1, 취소 : 2) : ");
+        int real = sc.nextInt();
+        if(real == 1){
+            return ch;
+        }else if(real == 2){
+            return makingCharacter();
+        }
+        return makingCharacter();
     }
+
+
 }
