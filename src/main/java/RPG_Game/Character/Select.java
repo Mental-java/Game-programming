@@ -7,7 +7,7 @@ public class Select {
     public Character makingCharacter() {
         do {
             Scanner sc = new Scanner(System.in);
-            System.out.println("****************** 플레이 할 캐릭터를 선택하시오 ***********************");
+            System.out.println("****************** 플레이 할 캐릭터를 선택하시오 ******************");
             System.out.println("1. A 캐릭터");
             System.out.println("2. B 캐릭터");
             System.out.println("3. C 캐릭터");
