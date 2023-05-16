@@ -27,5 +27,22 @@ public class Character extends CommonChar {
     }
 
 
+    public int getAttack() {
+        return attack;
     }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public int setMoney(int i) {
+        return this.money = i;
+    }
+    public void levelUp(){
+        if(experience >= 100) {
+            level++;
+            experience = experience - 100;
+        }
+        if(level == 6) level = 5;}
+
 }
