@@ -57,7 +57,8 @@ public class Battle {
             System.out.println(monster.getName() + "를 물리쳤습니다.");
             System.out.println("경험치 " + monster.experience + " 획득!");
             character.experience = character.experience + monster.experience;
-            System.out.println("돈 + monster.money +  획득!\n");
+            System.out.println("돈 " + monster.dropMoney + " 획득!\n");
+            character.money = character.money + monster.dropMoney;
             /* 경험치 100이상 시 레벨업 */
             character.levelUp();
 
