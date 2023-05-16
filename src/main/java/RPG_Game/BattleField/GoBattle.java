@@ -1,5 +1,6 @@
 package RPG_Game.BattleField;
 
+import RPG_Game.Battle.Battle;
 import RPG_Game.Character.Character;
 import RPG_Game.Monster.Monster;
 
@@ -24,9 +25,8 @@ public class GoBattle {
    }
 
       public void enterDungeon() {
-      do {
          Scanner sc = new Scanner(System.in);
-
+      do {
          if(dunjeonLevel == 6){
             dunjeonLevel = 0;
             return;
@@ -87,8 +87,8 @@ public class GoBattle {
    }
 
    public void selectDunjeon() {
+      Scanner sc = new Scanner(System.in);
       do {
-         Scanner sc = new Scanner(System.in);
          System.out.println("============== 던전 =================");
          System.out.println("1.던전을 조사한다.");
          System.out.println("2.마을로 돌아가기");
@@ -97,7 +97,7 @@ public class GoBattle {
 
          switch (menuNum){
             case 1:
-               fightMonster();
+               meetMonster();
                break;
             case 2:
                dunjeonLevel = 6;
@@ -107,11 +107,13 @@ public class GoBattle {
          }
       } while(true);
    }
-   private void fightMonster() {
+   private void meetMonster() {
       int level = character.getlevel();
       Monster monster = monsters[level - 1];
 
       System.out.println("레벨 " + level + " 몬스터 [" + monster.getName() + "]가 나타났습니다!");
+      Battle battle = new Battle(character, monster);
+
    }
 
 
