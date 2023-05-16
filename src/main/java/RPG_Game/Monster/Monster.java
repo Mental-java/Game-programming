@@ -3,14 +3,14 @@ package RPG_Game.Monster;
 public class Monster {
     public String name;
     public int hp;
-    public int dp;
+    public int dropMoney;
     public int attack;
     public int experience;
 
-    public Monster(String name, int hp, int dp, int attack, int experience) {
+    public Monster(String name, int hp, int dropMoney, int attack, int experience) {
         this.name = name;
         this.hp = hp;
-        this.dp = dp;
+        this.dropMoney = dropMoney;
         this.attack = attack;
         this.experience = experience;
     }

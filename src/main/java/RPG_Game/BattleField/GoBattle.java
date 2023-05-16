@@ -10,8 +10,14 @@ public class GoBattle {
    private Character character;
    private Monster[] monsters;
    private int dunjeonLevel;
+   /* 던전 레벨 고르기 */
+   private int currentLevel;
+   /* 캐릭터의 현재 레벨 */
+
+
    public GoBattle(Character character){
       this.character = character;
+      this.currentLevel = character.level;
       resetmonster();
    }
    private void resetmonster() {
@@ -27,7 +33,10 @@ public class GoBattle {
       public void enterDungeon() {
          Scanner sc = new Scanner(System.in);
       do {
+         /* 특정 값을 받으면 마을로 돌아가는 코드 */
          if(dunjeonLevel == 6){
+            System.out.println("\n마을 이동 중...\n");
+            /* 던전에 다시 입장하기 위해 값 초기화 */
             dunjeonLevel = 0;
             return;
          }
@@ -37,7 +46,9 @@ public class GoBattle {
          System.out.println("=====================================");
          System.out.print("입장할 던전의 레벨을 고르세요 : ");
          dunjeonLevel = sc.nextInt();
-         System.out.println("\n던전 입장 중...");
+
+         System.out.println("\n던전 입장 중...\n");
+
          switch (dunjeonLevel){
             case 1:
                if(dunjeonLevel == character.level){
@@ -89,9 +100,28 @@ public class GoBattle {
    public void selectDunjeon() {
       Scanner sc = new Scanner(System.in);
       do {
+         /* 레벨업 시 던전을 빠져나오게 하는 코드 */
+         if(currentLevel != character.getlevel()) {
+            /* 다음 던전에 들어가기 위한 조건을 맞추기 위해 현재 레벨 1증가 */
+            currentLevel++;
+            System.out.println("던전 이용 가능 레벨을 초과하셨습니다.\n마을로 이동합니다.");
+            /* 마을로 돌아가기위한 값 설정 */
+            dunjeonLevel = 6;
+            return;
+         }
+         /* 마을에서 부활하는 코드 */
+         if(character.hp <= 0){
+            System.out.println("캐릭터가 마을에서 부활합니다.");
+            character.hp = 100;
+            /* 마을로 돌아가기위한 값 설정 */
+            dunjeonLevel = 6;
+            return;
+         }
+
          System.out.println("============== 던전 =================");
          System.out.println("1.던전을 조사한다.");
          System.out.println("2.마을로 돌아가기");
+         System.out.println("====================================");
          System.out.print("어떻게 하시겠습니까? : ");
          int menuNum = sc.nextInt();
 
@@ -100,6 +130,7 @@ public class GoBattle {
                meetMonster();
                break;
             case 2:
+               /* 마을로 돌아가기위한 값 설정 */
                dunjeonLevel = 6;
                return;
             default:
@@ -111,9 +142,12 @@ public class GoBattle {
       int level = character.getlevel();
       Monster monster = monsters[level - 1];
 
+      System.out.println("\n던전 조사 중...\n");
       System.out.println("레벨 " + level + " 몬스터 [" + monster.getName() + "]가 나타났습니다!");
-      Battle battle = new Battle(character, monster);
 
+      /* 몬스터와 전투 시작 */
+      Battle battle = new Battle(character, monster);
+      battle.fightMonster();
    }
 
 

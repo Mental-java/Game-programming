@@ -43,7 +43,9 @@ public class Character extends CommonChar {
     }
     public void levelUp(){
         if(experience >= 100) {
+            System.out.println("LEVEL UP!!");
             level++;
+            System.out.println("레벨" + getlevel() + " 를 달성하셨습니다.");
             experience = experience - 100;
         }
         if(level == 6) level = 5;}
