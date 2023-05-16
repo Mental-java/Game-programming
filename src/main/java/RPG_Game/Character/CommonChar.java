@@ -22,7 +22,7 @@ public class CommonChar {
     }
 
     public void displayInfo() {
-        System.out.println("캐릭터 정보 :");
+        System.out.println("~~~~~~ 캐릭터 정보 ~~~~~~");
         System.out.println("이름 : " + name);
         System.out.println("체력 : " + hp);
         System.out.println("마나 : " + dp);

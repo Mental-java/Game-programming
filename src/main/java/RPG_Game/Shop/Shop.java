@@ -28,7 +28,6 @@ public class Shop {
                 case 1:
                     if(character.getMoney() >= 20) {
                         System.out.println("무기 강화 아이템을 구매했습니다.");
-
                         System.out.println("보유 잔액 : " + character.getMoney());
                     } else {
                         System.out.println("보유 잔액이 부족합니다.");
@@ -37,7 +36,6 @@ public class Shop {
                 case 2:
                     if(character.getMoney() >= 10) {
                         System.out.println("물약 아이템을 구매했습니다.");
-
                         System.out.println("보유 잔액 : " + character.getMoney());
                     } else {
                         System.out.println("보유 잔액이 부족합니다.");
@@ -47,7 +45,6 @@ public class Shop {
                 case 3:
                     if(character.getMoney() >= 50) {
                         System.out.println("레벨업 효과음을 구매했습니다.");
-
                         System.out.println("보유 잔액 : " + character.getMoney());
                     } else {
                         System.out.println("보유 잔액이 부족합니다.");
