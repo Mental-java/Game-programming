@@ -4,8 +4,8 @@ public class Character extends CommonChar {
     private String specialAbility;
 
 
-    public Character(String name, int hp, int mp, int dp, int attack, int experience, int level, int money) {
-        super(name, hp, mp, dp, attack, experience, level, money);
+    public Character(String name, int hp, int mp, int postionNum, int attack, int experience, int level, int money,int weaponLv) {
+        super(name, hp, mp, postionNum, attack, experience, level, money,weaponLv);
         super.displayInfo();
         this.specialAbility = specialAbility;
     }
@@ -17,8 +17,25 @@ public class Character extends CommonChar {
 
     public int getlevel(){return level;}
 
+    public int setweaponLv(int i){return this.weaponLv = i;}
+
+    public int getweaponLv(){return weaponLv;}
+
+
     public int getMoney() {
         return money;
     }
 
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public int setMoney(int i) {
+        return this.money = i;
+    }
 }
