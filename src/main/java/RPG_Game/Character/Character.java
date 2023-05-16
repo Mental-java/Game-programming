@@ -21,4 +21,11 @@ public class Character extends CommonChar {
         return money;
     }
 
+    public void levelUp(){
+        if(experience >= 100) {
+            level++;
+            experience = experience - 100;
+        }
+        if(level == 6) level = 5;
+    }
 }
