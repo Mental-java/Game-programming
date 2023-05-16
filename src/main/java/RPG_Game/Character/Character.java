@@ -27,15 +27,5 @@ public class Character extends CommonChar {
     }
 
 
-    public int getAttack() {
-        return attack;
-    }
-
-    public void setAttack(int attack) {
-        this.attack = attack;
-    }
-
-    public int setMoney(int i) {
-        return this.money = i;
     }
 }
