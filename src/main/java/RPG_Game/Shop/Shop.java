@@ -21,7 +21,7 @@ public class Shop {
             System.out.println("2. 물약(체력 +10) 구매하기  : 10원");
             System.out.println("3. 레벨업 효과음(오예~) 구매하기 : 50원");
             System.out.println("4. 마을로 돌아가기");
-            System.out.println(">> 보유 잔액 : " + character.getMoney() + "남은 물약 : " + "무기 레벨 : ");
+            System.out.println(">> 보유 잔액 : " + character.getMoney() + " / 남은 물약 : " + character.getpostionNum() + " / 무기 레벨 : " + character.getweaponLv());
             System.out.print("메뉴 선택: ");
             int menuNum = scanner.nextInt();
 
@@ -39,7 +39,10 @@ public class Shop {
                     break;
                 case 2:
                     if(character.getMoney() >= 10) {
+                        character.setMoney(character.getMoney() - 10);
+                        character.setpostionNum(character.getpostionNum()+1);
                         System.out.println("물약 아이템을 구매했습니다.");
+                        System.out.println("보유 물약 개수 : " + character.getpostionNum());
                         System.out.println("보유 잔액 : " + character.getMoney());
                     } else {
                         System.out.println("보유 잔액이 부족합니다.");

@@ -17,9 +17,12 @@ public class Character extends CommonChar {
 
     public int getlevel(){return level;}
 
+
     public int setweaponLv(int i){return this.weaponLv = i;}
 
     public int getweaponLv(){return weaponLv;}
+    public int setpostionNum(int i) {return this.postionNum = i;}
+    public int getpostionNum() {return postionNum;}
 
 
     public int getMoney() {
