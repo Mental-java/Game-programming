@@ -28,6 +28,9 @@ public class Shop {
             switch (menuNum) {
                 case 1:
                     if(character.getMoney() >= 20) {
+                        character.setMoney(character.getMoney() - 20);
+                        character.setweaponLv(character.getweaponLv()+1);
+                        character.setAttack(character.getAttack()+5);
                         System.out.println("무기 강화 아이템을 구매했습니다.");
                         System.out.println("보유 잔액 : " + character.getMoney());
                     } else {
