@@ -16,4 +16,8 @@ public class Character extends CommonChar {
 
     public int getlevel(){return level;}
 
+    public int getMoney() {
+        return money;
+    }
+
 }
