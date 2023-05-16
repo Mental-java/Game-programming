@@ -10,6 +10,7 @@ public class Character extends CommonChar {
         this.specialAbility = specialAbility;
     }
 
+
     public void useSpecialAbility() {
         System.out.println(name + "이(가) 특수 능력 " + specialAbility + "을(를) 사용했습니다!");
     }
