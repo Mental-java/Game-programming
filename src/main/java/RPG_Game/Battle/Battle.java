@@ -8,17 +8,27 @@ import java.util.Scanner;
 public class Battle {
     private Character character;
     private Monster monster;
+    private int selectNum;
+    /* 선택지 고르기 */
+    private int newMonsterHp;
+    /* 새로운 몬스터의 피 */
 
     public Battle(Character character, Monster monster){
         this.character = character;
         this.monster = monster;
+        this.newMonsterHp = monster.hp;
     }
     public void fightMonster(){
         Scanner sc = new Scanner(System.in);
+        /* 몬스터의 피를 리셋하여 새로운 몬스터를 생성한 것처럼 구현 */
+        if(newMonsterHp<=0) newMonsterHp = monster.hp;
+
         do{
+            System.out.println("===================================");
             System.out.println("1.싸우기 2.물약마시기 3.도망치기");
+            System.out.println("===================================");
             System.out.print("무엇을 하시겠습니까?");
-            int selectNum = sc.nextInt();
+            selectNum = sc.nextInt();
 
             switch (selectNum) {
                 case 1:
@@ -29,24 +39,32 @@ public class Battle {
                     break;
                 case 3:
                     escape();
-                    break;
+                    return;
                 default:
                     break;
             }
-        }while(character.hp > 0 || monster.hp > 0);
+        }while(character.hp > 0 && newMonsterHp > 0);
     }
 
     /* 공격 메소드 */
     public void hit(){
-        System.out.println(" 퍽퍽! ");
-        monster.hp = monster.hp - character.attack;
-        if(monster.hp <= 0) {
+        //캐릭터의 공격
+        System.out.println("\n 퍽퍽! \n");
+        newMonsterHp = newMonsterHp - character.attack;
+        //몬스터 처치 시
+        if(newMonsterHp <= 0) {
             System.out.println(monster.getName() + "를 물리쳤습니다.");
             System.out.println("경험치 " + monster.experience + " 획득!");
+            character.experience = character.experience + monster.experience;
+            System.out.println("돈 + monster.money +  획득!\n");
+            /* 경험치 100이상 시 레벨업 */
             character.levelUp();
-            //System.out.println("돈 " + monster.money + " 획득!");
+
         }else{
-            System.out.println(monster.getName() + " hp : " + monster.gethp());
+            /* 캐릭터의 공격 후 캐릭터와 몬스터의 현재 피 출력 */
+            System.out.println(character.name + " hp : " + character.hp);
+            System.out.println(monster.getName() + " hp : " + newMonsterHp);
+            monsterTurn();
         }
     }
 
@@ -62,6 +80,14 @@ public class Battle {
 
     /* 몬스터 공격 메소드 */
     public void monsterTurn(){
-        System.out.println(monster.attack + " 만큼 데미지를 입었습니다.");
+        character.hp = character.hp - monster.attack;
+        System.out.println("\n몬스터가 공격합니다.");
+        System.out.println(monster.attack + " 만큼 데미지를 입었습니다.\n");
+        /* 몬스터의 공격 후 캐릭터와 몬스터의 현재 피 출력 */
+        System.out.println(character.name + " hp : " + character.hp);
+        System.out.println(monster.getName() + " hp : " + newMonsterHp);
+        System.out.println("");
     }
+
+
 }
