@@ -41,17 +41,18 @@ public class Battle {
                     escape();
                     return;
                 default:
-                    break;
+                    System.out.println("잘못된 번호를 입력하셨습니다.");
             }
         }while(character.hp > 0 && newMonsterHp > 0);
     }
 
     /* 공격 메소드 */
     public void hit(){
-        //캐릭터의 공격
-        System.out.println("\n 퍽퍽! \n");
+        /* 캐릭터의 공격 */
+        System.out.println("\n 퍽퍽!");
+        System.out.println(character.attack + " 만큼 데미지를 입혔습니다.\n");
         newMonsterHp = newMonsterHp - character.attack;
-        //몬스터 처치 시
+        /* 몬스터 처치 시 */
         if(newMonsterHp <= 0) {
             System.out.println(monster.getName() + "를 물리쳤습니다.");
             System.out.println("경험치 " + monster.experience + " 획득!");
@@ -83,10 +84,15 @@ public class Battle {
         character.hp = character.hp - monster.attack;
         System.out.println("\n몬스터가 공격합니다.");
         System.out.println(monster.attack + " 만큼 데미지를 입었습니다.\n");
-        /* 몬스터의 공격 후 캐릭터와 몬스터의 현재 피 출력 */
-        System.out.println(character.name + " hp : " + character.hp);
-        System.out.println(monster.getName() + " hp : " + newMonsterHp);
-        System.out.println("");
+        /* 캐릭터 hp가 0이 될 시 */
+        if(character.hp <= 0){
+            System.out.println("캐릭터가 사망하였습니다.\n");
+        }else{
+            /* 몬스터의 공격 후 캐릭터와 몬스터의 현재 피 출력 */
+            System.out.println(character.name + " hp : " + character.hp);
+            System.out.println(monster.getName() + " hp : " + newMonsterHp);
+            System.out.println("");
+        }
     }
 
 

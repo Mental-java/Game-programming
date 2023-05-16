@@ -23,7 +23,7 @@ public class GoBattle {
    private void resetmonster() {
       monsters = new Monster[5];
 
-      monsters[0] = new Monster("^모^", 50, 30, 10, 50);
+      monsters[0] = new Monster("^모^", 50, 30, 10, 30);
       monsters[1] = new Monster("^모2^", 70, 30, 15, 50);
       monsters[2] = new Monster("^모3^", 90, 30, 20, 70);
       monsters[3] = new Monster("^모4^", 110, 30, 25, 90);
@@ -35,7 +35,7 @@ public class GoBattle {
       do {
          /* 특정 값을 받으면 마을로 돌아가는 코드 */
          if(dunjeonLevel == 6){
-            System.out.println("\n마을로 돌아갑니다...\n");
+            System.out.println("\n마을 이동 중...\n");
             /* 던전에 다시 입장하기 위해 값 초기화 */
             dunjeonLevel = 0;
             return;
@@ -105,6 +105,14 @@ public class GoBattle {
             /* 다음 던전에 들어가기 위한 조건을 맞추기 위해 현재 레벨 1증가 */
             currentLevel++;
             System.out.println("던전 이용 가능 레벨을 초과하셨습니다.\n마을로 이동합니다.");
+            /* 마을로 돌아가기위한 값 설정 */
+            dunjeonLevel = 6;
+            return;
+         }
+         /* 마을에서 부활하는 코드 */
+         if(character.hp <= 0){
+            System.out.println("캐릭터가 마을에서 부활합니다.");
+            character.hp = 100;
             /* 마을로 돌아가기위한 값 설정 */
             dunjeonLevel = 6;
             return;
