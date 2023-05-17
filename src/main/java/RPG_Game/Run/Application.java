@@ -15,7 +15,7 @@ public class Application {
             Scanner sc = new Scanner(System.in);
             System.out.println("****************** The King - Joju ******************");
             System.out.println("1. 게임 시작");
-            System.out.println("2. 게임 종료");
+            System.out.println("2" + ". 게임 종료");
             System.out.print("메뉴 선택 : ");
             int menuNum = sc.nextInt();
             System.out.println("");
