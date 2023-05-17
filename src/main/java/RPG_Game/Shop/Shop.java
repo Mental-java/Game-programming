@@ -56,6 +56,8 @@ public class Shop {
 
                 case 3:
                     if(character.getMoney() >= 50) {
+                        character.setMoney(character.getMoney() - 50);
+                        character.setShouting(true);
                         System.out.println("레벨업 효과음을 구매했습니다.");
                         System.out.println("보유 잔액 : " + character.getMoney());
                         System.out.println("");
