@@ -1,22 +1,21 @@
 package RPG_Game.Character;
 
 public class CommonChar {
-    public String name;
-    public int hp;
+    protected String name;
+    protected int hp;
     protected int mp;
     protected int potionNum;
     protected int attack;
-    public int experience;
+    protected int experience;
     protected int level;
-    public int money;
+    protected int money;
     protected int weaponLv;
     protected boolean shouting;
     protected int maxHp;
+    protected int maxMp;
 
-    public int maxMp;
 
-
-    public CommonChar(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting,int maxHp,int maxMp) {
+    public CommonChar(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting, int maxHp, int maxMp) {
         this.name = name;
         this.hp = hp;
         this.mp = mp;

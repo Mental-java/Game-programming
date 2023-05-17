@@ -5,7 +5,7 @@ import RPG_Game.Monster.Monster;
 public class Character extends CommonChar {
     private String specialAbility;
 
-    public Character(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting, int maxHp,int maxMp) {
+    public Character(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting, int maxHp, int maxMp) {
         super(name, hp, mp, potionNum, attack, experience, level, money, weaponLv, shouting, maxHp, maxMp);
         displayInfo();
     }
@@ -75,9 +75,7 @@ public class Character extends CommonChar {
         return maxHp;
     }
 
-    public int setPullHp(){
-        return hp = maxHp;
-    }
+    public void setFullHp(){ hp = maxHp; }
 
     public int drinkPotion(){
         return potionNum--;
@@ -104,8 +102,10 @@ public class Character extends CommonChar {
     }
 
     public void setMp(int i) {
-        this.mp=i;
+        this.mp = mp + i;
     }
+
+    public void setFullMp() {  mp = maxMp; }
 
     public int getMp() {
         return this.mp;
