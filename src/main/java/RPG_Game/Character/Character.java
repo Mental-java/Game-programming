@@ -5,17 +5,14 @@ import RPG_Game.Monster.Monster;
 public class Character extends CommonChar {
     private String specialAbility;
 
-    public Character(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting, int maxHp,int maxMp) {
+    public Character(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting, int maxHp, int maxMp) {
         super(name, hp, mp, potionNum, attack, experience, level, money, weaponLv, shouting, maxHp, maxMp);
         displayInfo();
     }
 
-
     public void useSpecialAbility() {
         System.out.println(name + "이(가) 특수 능력 " + specialAbility + "을(를) 사용했습니다!");
     }
-
-
 
     public void increaseMp(int amount) {
         mp += amount;
@@ -23,8 +20,6 @@ public class Character extends CommonChar {
             mp = maxMp;
         }
     }
-
-
 
     public int setweaponLv(int i){return this.weaponLv = i;}
 
@@ -61,11 +56,7 @@ public class Character extends CommonChar {
     }
 
     public int setHp(int x) {
-        return hp = hp + x;
-    }
-
-    public int resetHp() {
-        return this.hp = 100;
+        return this.hp = hp + x;
     }
 
     public String getName() {
@@ -84,9 +75,7 @@ public class Character extends CommonChar {
         return maxHp;
     }
 
-    public int setPullHp(){
-        return hp = maxHp;
-    }
+    public void setFullHp(){ hp = maxHp; }
 
     public int drinkPotion(){
         return potionNum--;
@@ -113,8 +102,10 @@ public class Character extends CommonChar {
     }
 
     public void setMp(int i) {
-        this.mp=i;
+        this.mp = mp + i;
     }
+
+    public void setFullMp() {  mp = maxMp; }
 
     public int getMp() {
         return this.mp;
