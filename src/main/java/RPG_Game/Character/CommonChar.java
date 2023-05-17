@@ -1,17 +1,17 @@
 package RPG_Game.Character;
 
 public class CommonChar {
-    public String name;
-    public int hp;
-    public int mp;
-    public int potionNum;
-    public int attack;
-    public int experience;
-    public int level;
-    public int money;
-    public int weaponLv;
-    public boolean shouting;
-    public int maxHp;
+    protected String name;
+    protected int hp;
+    protected int mp;
+    protected int potionNum;
+    protected int attack;
+    protected int experience;
+    protected int level;
+    protected int money;
+    protected int weaponLv;
+    protected boolean shouting;
+    protected int maxHp;
 
     public int maxMp;
 
@@ -45,6 +45,6 @@ public class CommonChar {
         System.out.println("돈 : " + money);
         System.out.println("무기 레벨 = " + weaponLv);
         System.out.println("샤우팅 : " + shouting);
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~\n");
     }
 }
