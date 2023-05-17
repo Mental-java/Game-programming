@@ -119,28 +119,28 @@ public class Battle implements Skill {
             System.out.println("스킬사용! " + damage + " 데미지가 들어갑니다.");
             newMonsterHp -= damage;
             character.setMp(0);
+            if(newMonsterHp <= 0) {
+                if(monster.getHp() == 400){
+                    System.out.println(monster.getName() + "를 물리치셨습니다!!!");
+                    System.out.println("게임 클리어");
+                    System.exit(0);
+                }else{
+                    System.out.println(monster.getName() + "를 물리쳤습니다.");
+                    System.out.println("경험치 " + monster.getExperience() + " 획득!");
+                    character.experience = character.experience + monster.getExperience();
+                    System.out.println("돈 " + monster.getDropMoney() + " 획득!\n");
+                    character.money = character.money + monster.getDropMoney();
+                    /* 경험치 100이상 시 레벨업 */
+                    character.levelUp();
+                }
+            }else{
+                /* 캐릭터의 공격 후 캐릭터와 몬스터의 현재 피 출력 */
+                System.out.println(character.name + " hp : " + character.hp);
+                System.out.println(monster.getName() + " hp : " + newMonsterHp);
+                monsterTurn();
+            }
         } else {
             System.out.println("\n마나가 충전되지 않았습니다.\n");
-        }
-        if(newMonsterHp <= 0) {
-            if(monster.getHp() == 400){
-                System.out.println(monster.getName() + "를 물리치셨습니다!!!");
-                System.out.println("게임 클리어");
-                System.exit(0);
-            }else{
-                System.out.println(monster.getName() + "를 물리쳤습니다.");
-                System.out.println("경험치 " + monster.getExperience() + " 획득!");
-                character.experience = character.experience + monster.getExperience();
-                System.out.println("돈 " + monster.getDropMoney() + " 획득!\n");
-                character.money = character.money + monster.getDropMoney();
-                /* 경험치 100이상 시 레벨업 */
-                character.levelUp();
-            }
-        }else{
-            /* 캐릭터의 공격 후 캐릭터와 몬스터의 현재 피 출력 */
-            System.out.println(character.name + " hp : " + character.hp);
-            System.out.println(monster.getName() + " hp : " + newMonsterHp);
-            monsterTurn();
         }
     }
     /* 몬스터 공격 메소드 */

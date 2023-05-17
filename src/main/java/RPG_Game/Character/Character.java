@@ -7,6 +7,7 @@ public class Character extends CommonChar {
 
     public Character(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting, int maxHp,int maxMp) {
         super(name, hp, mp, potionNum, attack, experience, level, money, weaponLv, shouting, maxHp, maxMp);
+        displayInfo();
     }
 
 
@@ -22,14 +23,8 @@ public class Character extends CommonChar {
             mp = maxMp;
         }
     }
-    public void useSkill(Monster monster, Skill skill) {
-        if (mp >= maxMp) {
-            skill.useSkill(this, monster);
-            mp = 0;
-        } else {
-            System.out.println("mp가 부족합니다.");
-        }
-    }
+
+
 
     public int setweaponLv(int i){return this.weaponLv = i;}
 
