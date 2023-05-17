@@ -23,11 +23,11 @@ public class GoBattle {
    private void resetmonster() {
       monsters = new Monster[5];
 
-      monsters[0] = new Monster("^모^", 50, 30, 10, 30);
-      monsters[1] = new Monster("^모2^", 70, 30, 15, 50);
-      monsters[2] = new Monster("^모3^", 90, 30, 20, 70);
-      monsters[3] = new Monster("^모4^", 110, 30, 25, 90);
-      monsters[4] = new Monster("보스몬스터", 130, 30, 30, 110);
+      monsters[0] = new Monster("^모^", 100, 30, 10, 30);
+      monsters[1] = new Monster("^모2^", 120, 30, 20, 50);
+      monsters[2] = new Monster("^모3^", 140, 30, 30, 70);
+      monsters[3] = new Monster("^모4^", 160, 30, 40, 90);
+      monsters[4] = new Monster("보스몬스터", 400, 30, 50, 110);
    }
 
       public void enterDungeon() {

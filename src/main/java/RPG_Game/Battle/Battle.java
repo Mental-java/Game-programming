@@ -72,12 +72,20 @@ public class Battle {
 
     /* 물약 사용 메소드 */
     public void usePotion(){
-        System.out.println(" 꼴~깍 ");
+        if(character.postionNum <= 0){
+            System.out.println("사용 가능한 포션이 없습니다.");
+        }else {
+            System.out.println(" 꼴~깍 ");
+            character.hp += 20;
+            character.postionNum--;
+            System.out.println("체력이 20 회복되었습니다.");
+            System.out.println("포션이" + character.postionNum + "개 남았습니다.");
+        }
     }
 
     /* 도망치기 메소드 */
     public void escape(){
-        System.out.println(" ㅌㅌㅌ ");
+        System.out.println("무사히 도망쳤다 !");
     }
 
     /* 몬스터 공격 메소드 */
