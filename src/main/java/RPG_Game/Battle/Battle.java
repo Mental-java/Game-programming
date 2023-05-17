@@ -16,12 +16,12 @@ public class Battle {
     public Battle(Character character, Monster monster){
         this.character = character;
         this.monster = monster;
-        this.newMonsterHp = monster.hp;
+        this.newMonsterHp = monster.getHp();
     }
     public void fightMonster(){
         Scanner sc = new Scanner(System.in);
         /* 몬스터의 피를 리셋하여 새로운 몬스터를 생성한 것처럼 구현 */
-        if(newMonsterHp<=0) newMonsterHp = monster.hp;
+        if(newMonsterHp<=0) newMonsterHp = monster.getHp();
 
         do{
             System.out.println("===================================");
@@ -43,33 +43,33 @@ public class Battle {
                 default:
                     System.out.println("잘못된 번호를 입력하셨습니다.");
             }
-        }while(character.hp > 0 && newMonsterHp > 0);
+        }while(character.getHp() > 0 && newMonsterHp > 0);
     }
 
     /* 공격 메소드 */
     public void hit(){
         /* 캐릭터의 공격 */
         System.out.println("\n 퍽퍽!");
-        System.out.println(character.attack + " 만큼 데미지를 입혔습니다.\n");
-        newMonsterHp = newMonsterHp - character.attack;
+        System.out.println(character.getAttack() + " 만큼 데미지를 입혔습니다.\n");
+        newMonsterHp = newMonsterHp - character.getAttack();
         /* 몬스터 처치 시 */
         if(newMonsterHp <= 0) {
-            if(monster.hp == 400){
-                System.out.println(monster.name + "를 물리치셨습니다!!!");
+            if(monster.getHp() == 400){
+                System.out.println(monster.getName()+ "를 물리치셨습니다!!!");
                 System.out.println("게임 클리어");
                 System.exit(0);
             }else{
                 System.out.println(monster.getName() + "를 물리쳤습니다.");
-                System.out.println("경험치 " + monster.experience + " 획득!");
-                character.experience = character.experience + monster.experience;
-                System.out.println("돈 " + monster.dropMoney + " 획득!\n");
-                character.money = character.money + monster.dropMoney;
+                System.out.println("경험치 " + monster.getExperience() + " 획득!");
+                character.setExperience(monster.getExperience());
+                System.out.println("돈 " + monster.getDropMoney() + " 획득!\n");
+                character.plusMoney(monster.getDropMoney());
                 /* 경험치 100이상 시 레벨업 */
                 character.levelUp();
             }
         }else{
             /* 캐릭터의 공격 후 캐릭터와 몬스터의 현재 피 출력 */
-            System.out.println(character.name + " hp : " + character.hp);
+            System.out.println(character.getName() + " hp : " + character.getHp());
             System.out.println(monster.getName() + " hp : " + newMonsterHp);
             monsterTurn();
         }
@@ -77,15 +77,24 @@ public class Battle {
 
     /* 물약 사용 메소드 */
     public void usePotion(){
-        if(character.potionNum <= 0){
+        if(character.getpotionNum() <= 0){
             System.out.println("\n사용 가능한 포션이 없습니다.\n");
         }else {
-            System.out.println("\n 꼴~깍 \n");
-            character.hp += 20;
-            character.potionNum--;
-            System.out.println("체력이 20 회복되었습니다.");
-            System.out.println(character.name + " hp : " + character.hp);
-            System.out.println("포션이 " + character.potionNum + " 개 남았습니다.\n");
+            if(character.getMaxHp() < character.setHp(20)){
+                character.setPullHp();
+                character.drinkPotion();
+                System.out.println("\n 꼴~깍 \n");
+                System.out.println("체력이 모두 회복되었습니다.");
+                System.out.println(character.getName() + " hp : " + character.getHp());
+                System.out.println("포션이 " + character.getpotionNum() + " 개 남았습니다.\n");
+            }else{
+                System.out.println("\n 꼴~깍 \n");
+                character.setHp(20);
+                character.drinkPotion();
+                System.out.println("체력이 20 회복되었습니다.");
+                System.out.println(character.getName() + " hp : " + character.getHp());
+                System.out.println("포션이 " + character.getpotionNum() + " 개 남았습니다.\n");
+            }
         }
     }
 
@@ -96,15 +105,15 @@ public class Battle {
 
     /* 몬스터 공격 메소드 */
     public void monsterTurn(){
-        character.hp = character.hp - monster.attack;
+        character.setHp(-monster.getAttack());
         System.out.println("\n몬스터가 공격합니다.");
-        System.out.println(monster.attack + " 만큼 데미지를 입었습니다.\n");
+        System.out.println(monster.getAttack() + " 만큼 데미지를 입었습니다.\n");
         /* 캐릭터 hp가 0이 될 시 */
-        if(character.hp <= 0){
+        if(character.getHp() <= 0){
             System.out.println("캐릭터가 사망하였습니다.\n");
         }else{
             /* 몬스터의 공격 후 캐릭터와 몬스터의 현재 피 출력 */
-            System.out.println(character.name + " hp : " + character.hp);
+            System.out.println(character.getName() + " hp : " + character.getHp());
             System.out.println(monster.getName() + " hp : " + newMonsterHp);
             System.out.println("");
         }

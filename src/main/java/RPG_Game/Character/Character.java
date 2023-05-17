@@ -4,7 +4,7 @@ public class Character extends CommonChar {
     private String specialAbility;
 
     public Character(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting, int maxHp) {
-        super(name, hp, mp, potionNum, attack, experience, level, money, weaponLv, shouting,maxHp);
+        super(name, hp, mp, potionNum, attack, experience, level, money, weaponLv, shouting, maxHp);
         super.displayInfo();
         this.specialAbility = specialAbility;
     }
@@ -45,14 +45,50 @@ public class Character extends CommonChar {
         return this.shouting;
     }
 
-    public void levelUp(){
+    public int getHp() {
+        return hp;
+    }
+
+    public int setHp(int x) {
+        return hp = hp + x;
+    }
+
+    public int resetHp() {
+        return this.hp = 100;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int setExperience(int x) {
+        return this.experience += x;
+    }
+
+    public int plusMoney(int x){
+        return this.money += x;
+    }
+
+    public int getMaxHp(){
+        return maxHp;
+    }
+
+    public int setPullHp(){
+        return hp = maxHp;
+    }
+
+    public int drinkPotion(){
+        return potionNum--;
+    }
+
+    public void levelUp() {
         if(experience >= 100) {
             System.out.println("LEVEL UP!!");
             level++;
             System.out.println("공격력 + 10");
             attack = attack + 10;
-            System.out.println("hp + 20");
-            hp = hp + 20;
+            System.out.println("MaxHp + 20");
+            maxHp = maxHp + 20;
             System.out.println("레벨" + getlevel() + " 를 달성하셨습니다.\n");
             experience = experience - 100;
             if(getShouting()) {
@@ -60,5 +96,4 @@ public class Character extends CommonChar {
             }
         }
         if(level == 6) level = 5;}
-
 }
