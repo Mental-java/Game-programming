@@ -27,6 +27,10 @@ public class Character extends CommonChar {
         return money;
     }
 
+    public int setMoney(int i) {
+        return this.money = i;
+    }
+
     public int getAttack() {
         return attack;
     }
@@ -35,27 +39,17 @@ public class Character extends CommonChar {
         this.attack = attack;
     }
 
-    public int setMoney(int i) {
-        return this.money = i;
-    }
     public void setShouting(boolean shouting) {
         this.shouting = shouting;
     }
+
     public boolean getShouting() {
         return this.shouting;
     }
 
-    public int getHp() {
-        return hp;
-    }
+    public int getHp() { return hp; }
 
-    public int setHp(int x) {
-        return hp = hp + x;
-    }
-
-    public int resetHp() {
-        return this.hp = 100;
-    }
+    public int setHp(int x) { return this.hp = hp + x; }
 
     public String getName() {
         return name;

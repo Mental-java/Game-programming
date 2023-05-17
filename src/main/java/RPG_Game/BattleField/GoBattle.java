@@ -23,8 +23,8 @@ public class GoBattle {
    private void resetmonster() {
       monsters = new Monster[5];
 
-      monsters[0] = new Monster("^모^", 100, 30, 10, 30);
-      monsters[1] = new Monster("^모2^", 120, 30, 20, 50);
+      monsters[0] = new Monster("^모^", 100, 30, 30, 50);
+      monsters[1] = new Monster("^모2^", 120, 30, 80, 50);
       monsters[2] = new Monster("^모3^", 140, 30, 30, 70);
       monsters[3] = new Monster("^모4^", 160, 30, 40, 90);
       monsters[4] = new Monster("보스몬스터", 400, 30, 50, 110);
@@ -137,7 +137,7 @@ public class GoBattle {
          /* 마을에서 부활하는 코드 */
          if(character.getHp() <= 0){
             System.out.println("캐릭터가 마을에서 부활합니다.");
-            character.resetHp();
+            character.setPullHp();
             /* 마을로 돌아가기위한 값 설정 */
             dunjeonLevel = 6;
             return;

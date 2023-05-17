@@ -46,23 +46,28 @@ public class Battle {
         }while(character.getHp() > 0 && newMonsterHp > 0);
     }
 
-    /* 공격 메소드 */
+    /* 캐릭터 공격 메소드 */
     public void hit(){
         /* 캐릭터의 공격 */
         System.out.println("\n 퍽퍽!");
         System.out.println(character.getAttack() + " 만큼 데미지를 입혔습니다.\n");
         newMonsterHp = newMonsterHp - character.getAttack();
-        /* 몬스터 처치 시 */
+
+
         if(newMonsterHp <= 0) {
+            /* 보스몬스터 클리어 시 */
             if(monster.getHp() == 400){
                 System.out.println(monster.getName()+ "를 물리치셨습니다!!!");
                 System.out.println("게임 클리어");
                 System.exit(0);
+            /* 몬스터 처치 시 */
             }else{
                 System.out.println(monster.getName() + "를 물리쳤습니다.");
-                System.out.println("경험치 " + monster.getExperience() + " 획득!");
+                /* 경험치 획득 */
+                System.out.println("경험치 " + monster.getExperience() + " 증가!");
                 character.setExperience(monster.getExperience());
-                System.out.println("돈 " + monster.getDropMoney() + " 획득!\n");
+                /* 돈 획득 */
+                System.out.println("돈 " + monster.getDropMoney() + "원 획득!\n");
                 character.plusMoney(monster.getDropMoney());
                 /* 경험치 100이상 시 레벨업 */
                 character.levelUp();
@@ -77,16 +82,19 @@ public class Battle {
 
     /* 물약 사용 메소드 */
     public void usePotion(){
+        /* 포션 0개일 때 사용 불가능 */
         if(character.getpotionNum() <= 0){
             System.out.println("\n사용 가능한 포션이 없습니다.\n");
         }else {
-            if(character.getMaxHp() < character.setHp(20)){
+            /* 체력 회복 후 현재 체력이 최대 체력을 못넘게 하는 코드 */
+            if(character.getMaxHp() <= character.getHp()+20){
                 character.setPullHp();
                 character.drinkPotion();
                 System.out.println("\n 꼴~깍 \n");
                 System.out.println("체력이 모두 회복되었습니다.");
                 System.out.println(character.getName() + " hp : " + character.getHp());
                 System.out.println("포션이 " + character.getpotionNum() + " 개 남았습니다.\n");
+            /* 체력 회복 후 현재 체력이 최대 체력을 넘지 않을 시 */
             }else{
                 System.out.println("\n 꼴~깍 \n");
                 character.setHp(20);
