@@ -37,13 +37,13 @@ public class GoBattle {
          if(dunjeonLevel == 6){
             System.out.print("\n마을 이동 중.");
             try {
-               Thread.sleep(900);
+               Thread.sleep(500);
                System.out.print(".");
-               Thread.sleep(900);
+               Thread.sleep(500);
                System.out.print(".");
-               Thread.sleep(900);
+               Thread.sleep(500);
                System.out.println(".");
-               Thread.sleep(900);
+               Thread.sleep(500);
                System.out.println();
             } catch (InterruptedException e) {
                e.printStackTrace();
@@ -62,13 +62,13 @@ public class GoBattle {
 
          System.out.print("\n던전 입장 중.");
          try {
-            Thread.sleep(900);
+            Thread.sleep(500);
             System.out.print(".");
-            Thread.sleep(900);
+            Thread.sleep(500);
             System.out.print(".");
-            Thread.sleep(900);
+            Thread.sleep(500);
             System.out.println(".");
-            Thread.sleep(900);
+            Thread.sleep(500);
             System.out.println();
          } catch (InterruptedException e) {
             e.printStackTrace();
@@ -169,13 +169,13 @@ public class GoBattle {
 
       System.out.print("\n던전 조사 중.");
       try {
-         Thread.sleep(900);
+         Thread.sleep(500);
          System.out.print(".");
-         Thread.sleep(900);
+         Thread.sleep(500);
          System.out.print(".");
-         Thread.sleep(900);
+         Thread.sleep(500);
          System.out.println(".");
-         Thread.sleep(900);
+         Thread.sleep(500);
          System.out.println();
       } catch (InterruptedException e) {
          e.printStackTrace();
