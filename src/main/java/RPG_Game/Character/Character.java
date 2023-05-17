@@ -45,6 +45,8 @@ public class Character extends CommonChar {
             level++;
             System.out.println("공격력 + 10");
             attack = attack + 10;
+            System.out.println("hp + 20");
+            hp = hp + 20;
             System.out.println("레벨" + getlevel() + " 를 달성하셨습니다.\n");
             experience = experience - 100;
         }
