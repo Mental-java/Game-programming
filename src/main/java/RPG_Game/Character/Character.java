@@ -3,8 +3,8 @@ package RPG_Game.Character;
 public class Character extends CommonChar {
     private String specialAbility;
 
-    public Character(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting) {
-        super(name, hp, mp, potionNum, attack, experience, level, money, weaponLv, shouting);
+    public Character(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting, int maxHp) {
+        super(name, hp, mp, potionNum, attack, experience, level, money, weaponLv, shouting,maxHp);
         super.displayInfo();
         this.specialAbility = specialAbility;
     }
