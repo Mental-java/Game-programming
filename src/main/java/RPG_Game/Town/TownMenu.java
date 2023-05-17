@@ -26,12 +26,14 @@ public class TownMenu {
             System.out.println("4. 게임 종료");
             System.out.print("메뉴 선택: ");
             int menuNum = scanner.nextInt();
+            System.out.println("");
 
             switch (menuNum) {
                 case 1:
                     dunjun.enterDungeon();
                     break;
                 case 2:
+                    System.out.println("상점 입장 중...\n");
                     Shop shop = new Shop(character);
                     shop.shop();
                     break;

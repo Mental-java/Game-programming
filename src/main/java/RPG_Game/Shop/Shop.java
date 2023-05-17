@@ -21,9 +21,10 @@ public class Shop {
             System.out.println("2. 물약(체력 +20) 구매하기  : 10원");
             System.out.println("3. 레벨업 효과음(오예~) 구매하기 : 50원");
             System.out.println("4. 마을로 돌아가기");
-            System.out.println(">> 보유 잔액 : " + character.getMoney() + " / 남은 물약 : " + character.getpostionNum() + " / 무기 레벨 : " + character.getweaponLv());
+            System.out.println(">> 보유 잔액 : " + character.getMoney() + " / 남은 물약 : " + character.getpotionNum() + " / 무기 레벨 : " + character.getweaponLv());
             System.out.print("메뉴 선택: ");
             int menuNum = scanner.nextInt();
+            System.out.println("");
 
             switch (menuNum) {
                 case 1:
@@ -33,19 +34,23 @@ public class Shop {
                         character.setAttack(character.getAttack()+5);
                         System.out.println("무기 강화 아이템을 구매했습니다.");
                         System.out.println("보유 잔액 : " + character.getMoney());
+                        System.out.println("");
                     } else {
                         System.out.println("보유 잔액이 부족합니다.");
+                        System.out.println("");
                     }
                     break;
                 case 2:
                     if(character.getMoney() >= 10) {
                         character.setMoney(character.getMoney() - 10);
-                        character.setpostionNum(character.getpostionNum()+1);
+                        character.setpotionNum(character.getpotionNum()+1);
                         System.out.println("물약 아이템을 구매했습니다.");
-                        System.out.println("보유 물약 개수 : " + character.getpostionNum());
+                        System.out.println("보유 물약 개수 : " + character.getpotionNum());
                         System.out.println("보유 잔액 : " + character.getMoney());
+                        System.out.println("");
                     } else {
                         System.out.println("보유 잔액이 부족합니다.");
+                        System.out.println("");
                     }
                     break;
 
@@ -53,12 +58,15 @@ public class Shop {
                     if(character.getMoney() >= 50) {
                         System.out.println("레벨업 효과음을 구매했습니다.");
                         System.out.println("보유 잔액 : " + character.getMoney());
+                        System.out.println("");
                     } else {
                         System.out.println("보유 잔액이 부족합니다.");
+                        System.out.println("");
                     }
                     break;
 //
                 case 4:
+                    System.out.println("마을로 돌아갑니다...\n");
                     return;
 //
                 default:
