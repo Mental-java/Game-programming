@@ -17,7 +17,7 @@ public class GoBattle {
 
    public GoBattle(Character character){
       this.character = character;
-      this.currentLevel = character.level;
+      this.currentLevel = character.getlevel();
       resetmonster();
    }
    private void resetmonster() {
@@ -76,7 +76,7 @@ public class GoBattle {
 
          switch (dunjeonLevel){
             case 1:
-               if(dunjeonLevel == character.level){
+               if(dunjeonLevel == character.getlevel()){
                   System.out.println("1레벨 던전에 입장합니다.");
                   selectDunjeon();
                }else{
@@ -84,7 +84,7 @@ public class GoBattle {
                }
                break;
             case 2:
-               if(dunjeonLevel == character.level){
+               if(dunjeonLevel == character.getlevel()){
                   System.out.println("2레벨 던전에 입장합니다.");
                   selectDunjeon();
                }else{
@@ -92,7 +92,7 @@ public class GoBattle {
                }
                break;
             case 3:
-               if(dunjeonLevel == character.level){
+               if(dunjeonLevel == character.getlevel()){
                   System.out.println("3레벨 던전에 입장합니다.");
                   selectDunjeon();
                }else{
@@ -100,7 +100,7 @@ public class GoBattle {
                }
                break;
             case 4:
-               if(dunjeonLevel == character.level){
+               if(dunjeonLevel == character.getlevel()){
                   System.out.println("4레벨 던전에 입장합니다.");
                   selectDunjeon();
                }else{
@@ -108,7 +108,7 @@ public class GoBattle {
                }
                break;
             case 5:
-               if(dunjeonLevel == character.level){
+               if(dunjeonLevel == character.getlevel()){
                   System.out.println("보스스테이지에 입장합니다.");
                   selectDunjeon();
                }else{
@@ -116,7 +116,7 @@ public class GoBattle {
                }
                break;
             default:
-               System.out.println("잘못된 번호를 입력하셨습니다.");
+               System.out.println("잘못된 번호를 입력하셨습니다.\n");
          }
       } while(true);
 
@@ -135,9 +135,9 @@ public class GoBattle {
             return;
          }
          /* 마을에서 부활하는 코드 */
-         if(character.hp <= 0){
+         if(character.getHp() <= 0){
             System.out.println("캐릭터가 마을에서 부활합니다.");
-            character.hp = 100;
+            character.resetHp();
             /* 마을로 돌아가기위한 값 설정 */
             dunjeonLevel = 6;
             return;

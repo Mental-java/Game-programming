@@ -1,11 +1,11 @@
 package RPG_Game.Monster;
 
 public class Monster {
-    public String name;
-    public int hp;
-    public int dropMoney;
-    public int attack;
-    public int experience;
+    private String name;
+    private int hp;
+    private int dropMoney;
+    private int attack;
+    private int experience;
 
     public Monster(String name, int hp, int dropMoney, int attack, int experience) {
         this.name = name;
@@ -19,7 +19,7 @@ public class Monster {
         return name;
     }
 
-    public int gethp() {
+    public int getHp() {
         return hp;
     }
 
@@ -29,5 +29,11 @@ public class Monster {
 
     public int getExperience() {
         return experience;
+    }
+
+    public int getDropMoney() { return dropMoney; }
+
+    public int setHp(int x){
+        return this.hp += x;
     }
 }
