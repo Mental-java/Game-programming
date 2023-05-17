@@ -35,13 +35,13 @@ public class TownMenu {
                 case 2:
                     System.out.print("상점 이동 중.");
                     try {
-                        Thread.sleep(900);
+                        Thread.sleep(500);
                         System.out.print(".");
-                        Thread.sleep(900);
+                        Thread.sleep(500);
                         System.out.print(".");
-                        Thread.sleep(900);
+                        Thread.sleep(500);
                         System.out.println(".");
-                        Thread.sleep(900);
+                        Thread.sleep(500);
                         System.out.println();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
