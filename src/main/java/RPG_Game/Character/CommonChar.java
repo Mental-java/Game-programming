@@ -11,9 +11,10 @@ public class CommonChar {
     public int money;
     public int weaponLv;
     public boolean shouting;
+    public int maxHp;
 
 
-    public CommonChar(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting) {
+    public CommonChar(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting,int maxHp) {
         this.name = name;
         this.hp = hp;
         this.mp = mp;
@@ -24,6 +25,7 @@ public class CommonChar {
         this.money = money;
         this.weaponLv = weaponLv;
         this.shouting = shouting;
+        this.maxHp = maxHp;
     }
 
 
@@ -31,7 +33,7 @@ public class CommonChar {
     public void displayInfo() {
         System.out.println("~~~~~~ 캐릭터 정보 ~~~~~~");
         System.out.println("이름 : " + name);
-        System.out.println("체력 : " + hp);
+        System.out.println("체력 : " + hp+" / "+maxHp);
         System.out.println("포션 개수 : " + potionNum);
         System.out.println("공격력 : " + attack);
         System.out.println("경험치 : " + experience);
