@@ -5,21 +5,16 @@ import RPG_Game.Monster.Monster;
 public class Character extends CommonChar {
     private String specialAbility;
 
+    public Character(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting, int maxHp,int maxMp) {
+        super(name, hp, mp, potionNum, attack, experience, level, money, weaponLv, shouting, maxHp, maxMp);
+    }
 
 
     public void useSpecialAbility() {
         System.out.println(name + "이(가) 특수 능력 " + specialAbility + "을(를) 사용했습니다!");
     }
 
-    public int getlevel(){return level;}
 
-    public int getMaxMp() {
-        return maxMp;
-    }
-
-    public int getMp() {
-        return mp;
-    }
 
     public void increaseMp(int amount) {
         mp += amount;
@@ -118,4 +113,19 @@ public class Character extends CommonChar {
         }
         if(level == 6) level = 5;}
 
+    public int getlevel() {
+        return this.level;
+    }
+
+    public void setMp(int i) {
+        this.mp=i;
+    }
+
+    public int getMp() {
+        return this.mp;
+    }
+
+    public int getMaxMp() {
+        return this.maxMp;
+    }
 }

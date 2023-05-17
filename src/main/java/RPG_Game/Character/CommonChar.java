@@ -1,14 +1,14 @@
 package RPG_Game.Character;
 
 public class CommonChar {
-    protected String name;
-    protected int hp;
+    public String name;
+    public int hp;
     protected int mp;
     protected int potionNum;
     protected int attack;
-    protected int experience;
+    public int experience;
     protected int level;
-    protected int money;
+    public int money;
     protected int weaponLv;
     protected boolean shouting;
     protected int maxHp;

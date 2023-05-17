@@ -56,6 +56,11 @@ public class Battle implements Skill {
         /* 캐릭터의 공격 */
         System.out.println("\n 퍽퍽!");
 
+        character.setMp(character.getMp() + 10);
+
+        System.out.println(character.getAttack() + " 만큼 데미지를 입혔습니다.\n");
+        newMonsterHp = newMonsterHp - character.getAttack();
+
         /* 몬스터 처치 시 */
         if(newMonsterHp <= 0) {
             if(monster.getHp() == 400){
@@ -118,16 +123,16 @@ public class Battle implements Skill {
             System.out.println("\n마나가 충전되지 않았습니다.\n");
         }
         if(newMonsterHp <= 0) {
-            if(monster.hp == 400){
-                System.out.println(monster.name + "를 물리치셨습니다!!!");
+            if(monster.getHp() == 400){
+                System.out.println(monster.getName() + "를 물리치셨습니다!!!");
                 System.out.println("게임 클리어");
                 System.exit(0);
             }else{
                 System.out.println(monster.getName() + "를 물리쳤습니다.");
-                System.out.println("경험치 " + monster.experience + " 획득!");
-                character.experience = character.experience + monster.experience;
-                System.out.println("돈 " + monster.dropMoney + " 획득!\n");
-                character.money = character.money + monster.dropMoney;
+                System.out.println("경험치 " + monster.getExperience() + " 획득!");
+                character.experience = character.experience + monster.getExperience();
+                System.out.println("돈 " + monster.getDropMoney() + " 획득!\n");
+                character.money = character.money + monster.getDropMoney();
                 /* 경험치 100이상 시 레벨업 */
                 character.levelUp();
             }
