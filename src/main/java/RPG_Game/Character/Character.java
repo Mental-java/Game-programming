@@ -1,10 +1,12 @@
 package RPG_Game.Character;
 
+import RPG_Game.Monster.Monster;
+
 public class Character extends CommonChar {
     private String specialAbility;
 
-    public Character(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting, int maxHp) {
-        super(name, hp, mp, potionNum, attack, experience, level, money, weaponLv, shouting,maxHp);
+    public Character(String name, int hp, int mp, int potionNum, int attack, int experience, int level, int money, int weaponLv, boolean shouting, int maxHp,int maxMp) {
+        super(name, hp, mp, potionNum, attack, experience, level, money, weaponLv, shouting,maxHp,maxMp);
         super.displayInfo();
         this.specialAbility = specialAbility;
     }
@@ -14,6 +16,29 @@ public class Character extends CommonChar {
     }
 
     public int getlevel(){return level;}
+
+    public int getMaxMp() {
+        return maxMp;
+    }
+
+    public int getMp() {
+        return mp;
+    }
+
+    public void increaseMp(int amount) {
+        mp += amount;
+        if (mp > maxMp) {
+            mp = maxMp;
+        }
+    }
+    public void useSkill(Monster monster, Skill skill) {
+        if (mp >= maxMp) {
+            skill.useSkill(this, monster);
+            mp = 0;
+        } else {
+            System.out.println("mp가 부족합니다.");
+        }
+    }
 
     public int setweaponLv(int i){return this.weaponLv = i;}
 
@@ -61,4 +86,7 @@ public class Character extends CommonChar {
         }
         if(level == 6) level = 5;}
 
+    public void setMp(int i) {
+        this.mp=i;
+    }
 }
