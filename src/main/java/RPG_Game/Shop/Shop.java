@@ -18,7 +18,7 @@ public class Shop {
             Scanner scanner = new Scanner(System.in);
             System.out.println("********************* 상점 ***********************");
             System.out.println("1. 무기 강화(공격력 +5) 구매하기 : 20원");
-            System.out.println("2. 물약(체력 +10) 구매하기  : 10원");
+            System.out.println("2. 물약(체력 +20) 구매하기  : 10원");
             System.out.println("3. 레벨업 효과음(오예~) 구매하기 : 50원");
             System.out.println("4. 마을로 돌아가기");
             System.out.println(">> 보유 잔액 : " + character.getMoney() + " / 남은 물약 : " + character.getpostionNum() + " / 무기 레벨 : " + character.getweaponLv());

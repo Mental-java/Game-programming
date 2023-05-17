@@ -8,9 +8,9 @@ public class Select {
         do {
             Scanner sc = new Scanner(System.in);
             System.out.println("****************** 플레이 할 캐릭터를 선택하시오 ******************");
-            System.out.println("1. A 캐릭터");
-            System.out.println("2. B 캐릭터");
-            System.out.println("3. C 캐릭터");
+            System.out.println("1. 전사");
+            System.out.println("2. 도적");
+            System.out.println("3. 마법사");
             System.out.print("메뉴 선택 : ");
             int menuNum = sc.nextInt();
 
@@ -29,7 +29,7 @@ public class Select {
 
     private Character createA() {
         Scanner sc = new Scanner(System.in);
-        Character ch = new Character("A", 100, 0,0, 20, 0,1, 30,0);
+        Character ch = new Character("전사", 100, 0,0, 50, 0,1, 30,0);
 
         System.out.print("확실합니까? (확인 : 1, 취소 : 2) : ");
         int real = sc.nextInt();
@@ -43,7 +43,7 @@ public class Select {
 
     private Character createB() {
         Scanner sc = new Scanner(System.in);
-        Character ch = new Character("B", 120, 0,0, 20, 0,1, 30,0);
+        Character ch = new Character("도적", 60, 0,0, 80, 0,1, 30,0);
 
         System.out.print("확실합니까? (확인 : 1, 취소 : 2) : ");
         int real = sc.nextInt();
@@ -58,7 +58,7 @@ public class Select {
 
     private Character createC() {
         Scanner sc = new Scanner(System.in);
-        Character ch = new Character("C", 140, 0,0, 20, 0,1, 30,0);
+        Character ch = new Character("마법사", 80, 0,0, 60, 0,1, 30,0);
 
         System.out.print("확실합니까? (확인 : 1, 취소 : 2) : ");
         int real = sc.nextInt();
