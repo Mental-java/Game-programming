@@ -19,6 +19,7 @@ public class Application {
             System.out.print("메뉴 선택 : ");
             int menuNum = sc.nextInt();
             System.out.println("");
+
             switch (menuNum){
                 case 1:
                     Select s = new Select();
