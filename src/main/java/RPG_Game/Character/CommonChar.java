@@ -41,6 +41,6 @@ public class CommonChar {
         System.out.println("돈 : " + money);
         System.out.println("무기 레벨 = " + weaponLv);
         System.out.println("샤우팅 : " + shouting);
-        System.out.println("");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 }

@@ -3,7 +3,7 @@ package RPG_Game.BattleField;
 import RPG_Game.Battle.Battle;
 import RPG_Game.Character.Character;
 import RPG_Game.Monster.Monster;
-
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class GoBattle {
@@ -35,7 +35,20 @@ public class GoBattle {
       do {
          /* 특정 값을 받으면 마을로 돌아가는 코드 */
          if(dunjeonLevel == 6){
-            System.out.println("\n마을 이동 중...\n");
+            System.out.print("\n마을 이동 중.");
+            try {
+               Thread.sleep(900);
+               System.out.print(".");
+               Thread.sleep(900);
+               System.out.print(".");
+               Thread.sleep(900);
+               System.out.println(".");
+               Thread.sleep(900);
+               System.out.println();
+            } catch (InterruptedException e) {
+               e.printStackTrace();
+            }
+
             /* 던전에 다시 입장하기 위해 값 초기화 */
             dunjeonLevel = 0;
             return;
@@ -47,7 +60,19 @@ public class GoBattle {
          System.out.print("입장할 던전의 레벨을 고르세요 : ");
          dunjeonLevel = sc.nextInt();
 
-         System.out.println("\n던전 입장 중...\n");
+         System.out.print("\n던전 입장 중.");
+         try {
+            Thread.sleep(900);
+            System.out.print(".");
+            Thread.sleep(900);
+            System.out.print(".");
+            Thread.sleep(900);
+            System.out.println(".");
+            Thread.sleep(900);
+            System.out.println();
+         } catch (InterruptedException e) {
+            e.printStackTrace();
+         }
 
          switch (dunjeonLevel){
             case 1:
@@ -142,7 +167,19 @@ public class GoBattle {
       int level = character.getlevel();
       Monster monster = monsters[level - 1];
 
-      System.out.println("\n던전 조사 중...\n");
+      System.out.print("\n던전 조사 중.");
+      try {
+         Thread.sleep(900);
+         System.out.print(".");
+         Thread.sleep(900);
+         System.out.print(".");
+         Thread.sleep(900);
+         System.out.println(".");
+         Thread.sleep(900);
+         System.out.println();
+      } catch (InterruptedException e) {
+         e.printStackTrace();
+      }
       System.out.println("레벨 " + level + " 몬스터 [" + monster.getName() + "]가 나타났습니다!");
 
       /* 몬스터와 전투 시작 */

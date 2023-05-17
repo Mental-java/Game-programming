@@ -33,7 +33,19 @@ public class TownMenu {
                     dunjun.enterDungeon();
                     break;
                 case 2:
-                    System.out.println("상점 입장 중...\n");
+                    System.out.print("상점 이동 중.");
+                    try {
+                        Thread.sleep(900);
+                        System.out.print(".");
+                        Thread.sleep(900);
+                        System.out.print(".");
+                        Thread.sleep(900);
+                        System.out.println(".");
+                        Thread.sleep(900);
+                        System.out.println();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     Shop shop = new Shop(character);
                     shop.shop();
                     break;
