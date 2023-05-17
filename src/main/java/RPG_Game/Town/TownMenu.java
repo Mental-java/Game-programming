@@ -19,7 +19,7 @@ public class TownMenu {
     public void townMenu() {
         do {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("****************** 마을 메뉴 ***********************");
+            System.out.println("****************** 마을 메뉴 ******************");
             System.out.println("1. 던전 입장");
             System.out.println("2. 상점");
             System.out.println("3. 캐릭터 특성창 보기");
