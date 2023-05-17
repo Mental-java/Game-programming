@@ -54,14 +54,19 @@ public class Battle {
         newMonsterHp = newMonsterHp - character.attack;
         /* 몬스터 처치 시 */
         if(newMonsterHp <= 0) {
-            System.out.println(monster.getName() + "를 물리쳤습니다.");
-            System.out.println("경험치 " + monster.experience + " 획득!");
-            character.experience = character.experience + monster.experience;
-            System.out.println("돈 " + monster.dropMoney + " 획득!\n");
-            character.money = character.money + monster.dropMoney;
-            /* 경험치 100이상 시 레벨업 */
-            character.levelUp();
-
+            if(monster.hp == 400){
+                System.out.println(monster.name + "를 물리치셨습니다!!!");
+                System.out.println("게임 클리어");
+                System.exit(0);
+            }else{
+                System.out.println(monster.getName() + "를 물리쳤습니다.");
+                System.out.println("경험치 " + monster.experience + " 획득!");
+                character.experience = character.experience + monster.experience;
+                System.out.println("돈 " + monster.dropMoney + " 획득!\n");
+                character.money = character.money + monster.dropMoney;
+                /* 경험치 100이상 시 레벨업 */
+                character.levelUp();
+            }
         }else{
             /* 캐릭터의 공격 후 캐릭터와 몬스터의 현재 피 출력 */
             System.out.println(character.name + " hp : " + character.hp);
@@ -72,20 +77,21 @@ public class Battle {
 
     /* 물약 사용 메소드 */
     public void usePotion(){
-        if(character.postionNum <= 0){
-            System.out.println("사용 가능한 포션이 없습니다.");
+        if(character.potionNum <= 0){
+            System.out.println("\n사용 가능한 포션이 없습니다.\n");
         }else {
-            System.out.println(" 꼴~깍 ");
+            System.out.println("\n 꼴~깍 \n");
             character.hp += 20;
-            character.postionNum--;
+            character.potionNum--;
             System.out.println("체력이 20 회복되었습니다.");
-            System.out.println("포션이" + character.postionNum + "개 남았습니다.");
+            System.out.println(character.name + " hp : " + character.hp);
+            System.out.println("포션이 " + character.potionNum + " 개 남았습니다.\n");
         }
     }
 
     /* 도망치기 메소드 */
     public void escape(){
-        System.out.println("무사히 도망쳤다 !");
+        System.out.println("\n무사히 도망쳤다!\n");
     }
 
     /* 몬스터 공격 메소드 */

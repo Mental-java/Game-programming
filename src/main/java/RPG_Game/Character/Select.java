@@ -13,6 +13,7 @@ public class Select {
             System.out.println("3. 마법사");
             System.out.print("메뉴 선택 : ");
             int menuNum = sc.nextInt();
+            System.out.println("");
 
             switch (menuNum) {
                 case 1:
@@ -31,8 +32,9 @@ public class Select {
         Scanner sc = new Scanner(System.in);
         Character ch = new Character("전사", 100, 0,0, 50, 0,1, 30,0);
 
-        System.out.print("확실합니까? (확인 : 1, 취소 : 2) : ");
+        System.out.print("이 캐릭터를 선택하시겠습니까? (확인 : 1, 취소 : 2) : ");
         int real = sc.nextInt();
+        System.out.println("");
         if(real == 1){
            return ch;
         }else if(real == 2){
@@ -43,10 +45,11 @@ public class Select {
 
     private Character createB() {
         Scanner sc = new Scanner(System.in);
-        Character ch = new Character("도적", 60, 0,0, 80, 0,1, 30,0);
+        Character ch = new Character("도적", 60, 0,0, 80, 0, 1, 30, 0);
 
-        System.out.print("확실합니까? (확인 : 1, 취소 : 2) : ");
+        System.out.print("이 캐릭터를 선택하시겠습니까? (확인 : 1, 취소 : 2) : ");
         int real = sc.nextInt();
+        System.out.println("");
         if(real == 1){
             return ch;
         }else if(real == 2){
@@ -58,10 +61,11 @@ public class Select {
 
     private Character createC() {
         Scanner sc = new Scanner(System.in);
-        Character ch = new Character("마법사", 80, 0,0, 60, 0,1, 30,0);
+        Character ch = new Character("마법사", 80, 0,0, 60, 0, 1, 30,0);
 
-        System.out.print("확실합니까? (확인 : 1, 취소 : 2) : ");
+        System.out.print("이 캐릭터를 선택하시겠습니까? (확인 : 1, 취소 : 2) : ");
         int real = sc.nextInt();
+        System.out.println("");
         if(real == 1){
             return ch;
         }else if(real == 2){
