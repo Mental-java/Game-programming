@@ -137,7 +137,7 @@ public class GoBattle {
          /* 마을에서 부활하는 코드 */
          if(character.getHp() <= 0){
             System.out.println("캐릭터가 마을에서 부활합니다.");
-            character.resetHp();
+            character.setPullHp();
             /* 마을로 돌아가기위한 값 설정 */
             dunjeonLevel = 6;
             return;
