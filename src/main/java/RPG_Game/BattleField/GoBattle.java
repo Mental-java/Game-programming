@@ -4,6 +4,7 @@ import RPG_Game.Battle.Battle;
 import RPG_Game.Character.Character;
 import RPG_Game.Monster.Monster;
 import java.time.LocalDateTime;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GoBattle {
@@ -58,66 +59,73 @@ public class GoBattle {
          System.out.println("1레벨 2레벨 3레벨 4레벨 5레벨(보스스테이지)");
          System.out.println("=====================================");
          System.out.print("입장할 던전의 레벨을 고르세요 : ");
-         dunjeonLevel = sc.nextInt();
 
-         System.out.print("\n던전 입장 중.");
          try {
-            Thread.sleep(500);
-            System.out.print(".");
-            Thread.sleep(500);
-            System.out.print(".");
-            Thread.sleep(500);
-            System.out.println(".");
-            Thread.sleep(500);
-            System.out.println();
-         } catch (InterruptedException e) {
-            e.printStackTrace();
+            dunjeonLevel = sc.nextInt();
+
+            System.out.print("\n던전 입장 중.");
+            try {
+               Thread.sleep(500);
+               System.out.print(".");
+               Thread.sleep(500);
+               System.out.print(".");
+               Thread.sleep(500);
+               System.out.println(".");
+               Thread.sleep(500);
+               System.out.println();
+            } catch (InterruptedException e) {
+               e.printStackTrace();
+            }
+
+            switch (dunjeonLevel){
+               case 1:
+                  if(dunjeonLevel == character.getlevel()){
+                     System.out.println("1레벨 던전에 입장합니다.");
+                     selectDunjeon();
+                  }else{
+                     System.out.println("!!입장가능한 레벨이 아닙니다.");
+                  }
+                  break;
+               case 2:
+                  if(dunjeonLevel == character.getlevel()){
+                     System.out.println("2레벨 던전에 입장합니다.");
+                     selectDunjeon();
+                  }else{
+                     System.out.println("!!입장가능한 레벨이 아닙니다.");
+                  }
+                  break;
+               case 3:
+                  if(dunjeonLevel == character.getlevel()){
+                     System.out.println("3레벨 던전에 입장합니다.");
+                     selectDunjeon();
+                  }else{
+                     System.out.println("!!입장가능한 레벨이 아닙니다.");
+                  }
+                  break;
+               case 4:
+                  if(dunjeonLevel == character.getlevel()){
+                     System.out.println("4레벨 던전에 입장합니다.");
+                     selectDunjeon();
+                  }else{
+                     System.out.println("!!입장가능한 레벨이 아닙니다.");
+                  }
+                  break;
+               case 5:
+                  if(dunjeonLevel == character.getlevel()){
+                     System.out.println("보스스테이지에 입장합니다.");
+                     selectDunjeon();
+                  }else{
+                     System.out.println("!!입장가능한 레벨이 아닙니다.");
+                  }
+                  break;
+               default:
+                  System.out.println("잘못된 번호를 입력하셨습니다.\n");
+            }
+         } catch (InputMismatchException e) {
+            System.out.println("[Error] 숫자를 입력해주세요.");
+            sc.nextLine();
          }
 
-         switch (dunjeonLevel){
-            case 1:
-               if(dunjeonLevel == character.getlevel()){
-                  System.out.println("1레벨 던전에 입장합니다.");
-                  selectDunjeon();
-               }else{
-                  System.out.println("!!입장가능한 레벨이 아닙니다.");
-               }
-               break;
-            case 2:
-               if(dunjeonLevel == character.getlevel()){
-                  System.out.println("2레벨 던전에 입장합니다.");
-                  selectDunjeon();
-               }else{
-                  System.out.println("!!입장가능한 레벨이 아닙니다.");
-               }
-               break;
-            case 3:
-               if(dunjeonLevel == character.getlevel()){
-                  System.out.println("3레벨 던전에 입장합니다.");
-                  selectDunjeon();
-               }else{
-                  System.out.println("!!입장가능한 레벨이 아닙니다.");
-               }
-               break;
-            case 4:
-               if(dunjeonLevel == character.getlevel()){
-                  System.out.println("4레벨 던전에 입장합니다.");
-                  selectDunjeon();
-               }else{
-                  System.out.println("!!입장가능한 레벨이 아닙니다.");
-               }
-               break;
-            case 5:
-               if(dunjeonLevel == character.getlevel()){
-                  System.out.println("보스스테이지에 입장합니다.");
-                  selectDunjeon();
-               }else{
-                  System.out.println("!!입장가능한 레벨이 아닙니다.");
-               }
-               break;
-            default:
-               System.out.println("잘못된 번호를 입력하셨습니다.\n");
-         }
       } while(true);
 
    }
@@ -148,19 +156,26 @@ public class GoBattle {
          System.out.println("2.마을로 돌아가기");
          System.out.println("====================================");
          System.out.print("어떻게 하시겠습니까? : ");
-         int menuNum = sc.nextInt();
 
-         switch (menuNum){
-            case 1:
-               meetMonster();
-               break;
-            case 2:
-               /* 마을로 돌아가기위한 값 설정 */
-               dunjeonLevel = 6;
-               return;
-            default:
-               System.out.println("잘못된 번호를 입력하셨습니다.");
+         try {
+            int menuNum = sc.nextInt();
+
+            switch (menuNum) {
+               case 1:
+                  meetMonster();
+                  break;
+               case 2:
+                  /* 마을로 돌아가기위한 값 설정 */
+                  dunjeonLevel = 6;
+                  return;
+               default:
+                  System.out.println("잘못된 번호를 입력하셨습니다.");
+            }
+         } catch (InputMismatchException e) {
+            System.out.println("[Error] 숫자를 입력해주세요.");
+            sc.nextLine(); // 버퍼 비우기
          }
+
       } while(true);
    }
    private void meetMonster() {
