@@ -24,10 +24,13 @@ public class Application {
 
                 switch (menuNum) {
                     case 1:
-                        System.out.println("case 1");
+                        Select s = new Select();
+                        Character character = s.makingCharacter();
+                        TownMenu townMenu = new TownMenu(character);
+                        townMenu.townMenu();
                         break;
                     case 2:
-                        return;
+                        System.exit(0);
                     default:
                         System.out.println("잘못된 번호를 입력하셨습니다.");
                 }
