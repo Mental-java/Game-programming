@@ -1,9 +1,12 @@
 package RPG_Game.Battle;
 
 import RPG_Game.Character.Character;
+import RPG_Game.Character.Select;
 import RPG_Game.Character.Skill;
 import RPG_Game.Monster.Monster;
+import RPG_Game.Town.TownMenu;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Battle implements Skill {
@@ -30,24 +33,32 @@ public class Battle implements Skill {
             System.out.println("1.싸우기 2.물약마시기 3.도망치기 4.스킬사용");
             System.out.println("===================================");
             System.out.print("무엇을 하시겠습니까?");
-            selectNum = sc.nextInt();
 
-            switch (selectNum) {
-                case 1:
-                    hit();
-                    break;
-                case 2:
-                    usePotion();
-                    break;
-                case 3:
-                    escape();
-                    return;
-                case 4:
-                    useSkill(character, monster);
-                    break;
-                default:
-                    System.out.println("잘못된 번호를 입력하셨습니다.");
+            try {
+                selectNum = sc.nextInt();
+
+                switch (selectNum) {
+                    case 1:
+                        hit();
+                        break;
+                    case 2:
+                        usePotion();
+                        break;
+                    case 3:
+                        escape();
+                        return;
+                    case 4:
+                        useSkill(character, monster);
+                        break;
+                    default:
+                        System.out.println("잘못된 번호를 입력하셨습니다.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("[Error] 숫자를 입력해주세요.");
+                sc.nextLine();
             }
+
+
         }while(character.getHp() > 0 && newMonsterHp > 0);
     }
 
