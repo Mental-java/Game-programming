@@ -23,10 +23,10 @@ public class GoBattle {
    private void resetmonster() {
       monsters = new Monster[5];
 
-      monsters[0] = new Monster("^모^", 100, 30, 10, 40);
-      monsters[1] = new Monster("^모2^", 120, 30, 20, 50);
-      monsters[2] = new Monster("^모3^", 140, 30, 30, 70);
-      monsters[3] = new Monster("^모4^", 160, 30, 40, 70);
+      monsters[0] = new Monster("( ^ω^ )", 100, 30, 10, 40);
+      monsters[1] = new Monster("ʕʘ‿ʘʔ", 120, 30, 20, 50);
+      monsters[2] = new Monster("ʕ⁎̯͡⁎ʔ༄", 140, 30, 30, 50);
+      monsters[3] = new Monster("ㄴ(ಠ_ಠ)ㄱ", 160, 30, 40, 50);
       monsters[4] = new Monster("보스몬스터", 400, 30, 50, 110);
    }
 
@@ -180,7 +180,25 @@ public class GoBattle {
       } catch (InterruptedException e) {
          e.printStackTrace();
       }
-      System.out.println("레벨 " + level + " 몬스터 [" + monster.getName() + "]가 나타났습니다!");
+      if(level == 5) {
+         System.out.println(
+                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⢷⣷⣣⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                 "⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⢏⣿⣿⡵⡀⠀⠀⠀⠀⠀⠀⠀\n" +
+                 "⠀⠀⠀⠀⣠⣮⣷⣿⣿⣿⣿⣷⣄⣄⠀⠀⠀⠀⠈⢞⣿⣿⡵⡀⠀⠀⠀⠀⠀\n" +
+                 " ⠀⠀⡠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣏⢦⣤⡀⠀⠀⠀⠫⣻⣿⣾⢄⠀⠀⠀\n" +
+                 " ⠀⣔⣿⣿⣿⣿⣿⣿⠿⣿⠻⢟⣿⣿⣿⣿⣿⡆⠀⠀⠀⠑⡿⣿⣯⢆⠀⠀\n" +
+                 " ⢰⣸⢿⣻⢟⠃⠉⠉⠀⡠⠤⠸⣸⣿⣿⣿⡳⠁⠀⠀⠀⠀⡨⠺⠿⠇⢓⡄\n" +
+                 " ⠧⠊⠁⠘⣖⣳⠠⣶⣋⡹⠁⠀⠛⣩⢻⠋⠀⠀⠀⠀⠀⢀⠇⠀⠀⠀⠀⢾⠀\n" +
+                 "⠀⠀⢠⠂⠁⠓⠒⠊⠀⡠⠤⡀⢠⠀⠚⠀⠀⠀⠀⠀⡠⠊⢀⠤⡤⣔⠩⠼⡀\n" +
+                 "⠀⠀⢇⠀⠀⢀⡠⢔⣪⠠⠖⠇⡘⠀⠀⠀⢀⠄⠒⠉⢀⠔⠁⠀⣧⢞⠮⠭⠵⡀\n" +
+                 "⠀⠀⠘⠒⠉⣾⣀⣀⠀⣀⣀⠦⠗⠹⠙⠃⠁⠀⡠⠔⡡⠔⠒⠉⡨⢴⢹⣿⣏⡆\n" +
+                 "⠀⠀⠀⠀⡸⠉⠀⠀⠁⠀⠀⠀⠀⣇⡠⡄⡶⠯⠔⠈⠀⠀⡠⠊⠀⠀⡿⣿⣿⡇\n" +
+                 "⠀⠀⠀⢀⠇⠀⠀⠀⠀⢀⣀⠤⡤⠵⠊⢸⠀⡠⠤⠤⠐⠉⠀⠀⠀⠀⣷⣿⢿⡇\n" +
+                 "⠀⠀⢀⠃⠀⢀⣀⣀⣀⣠⣀⣀⣿⠉⠉⠉⠉⠀⠀\n" +
+                 "[보스몬스터]가 등장합니다...!!!!!");
+      }else{
+         System.out.println(level + "레벨 몬스터 [" + monster.getName() + "]가 나타났습니다!");
+      }
 
       /* 몬스터와 전투 시작 */
       Battle battle = new Battle(character, monster);

@@ -54,7 +54,7 @@ public class Battle implements Skill {
     /* 공격 메소드 */
     public void hit(){
         /* 캐릭터의 공격 */
-        System.out.println("\n 퍽퍽!");
+        System.out.println("\n[퍽퍽!]");
 
         if(character.getMaxMp() == 100){
             character.setMp(20);
@@ -68,7 +68,7 @@ public class Battle implements Skill {
             }
         }
 
-        System.out.println(character.getAttack() + " 만큼 데미지를 입혔습니다.\n");
+        System.out.println(character.getAttack() + " 데미지를 입혔습니다.\n");
         newMonsterHp = newMonsterHp - character.getAttack();
 
 
@@ -80,8 +80,8 @@ public class Battle implements Skill {
                 System.exit(0);
             /* 몬스터 처치 시 */
             }else{
-                System.out.println(character.getName() + " Hp : " + character.getHp());
-                System.out.println(character.getName() + " Mp : " + character.getMp());
+                System.out.println("[ " + character.getName() + " ] Hp : " + character.getHp());
+                System.out.println("[ " + character.getName() + " ] Mp : " + character.getMp());
                 System.out.println("");
 
                 System.out.println(monster.getName() + "를 물리쳤습니다.");
@@ -96,8 +96,8 @@ public class Battle implements Skill {
             }
         }else{
             /* 캐릭터의 공격 후 캐릭터와 몬스터의 현재 피 출력 */
-            System.out.println(character.getName() + " Hp : " + character.getHp());
-            System.out.println(character.getName() + " Mp : " + character.getMp());
+            System.out.println("[ " + character.getName() + " ] Hp : " + character.getHp());
+            System.out.println("[ " + character.getName() + " ] Mp : " + character.getMp());
             System.out.println(monster.getName() + " Hp : " + newMonsterHp);
             monsterTurn();
         }
@@ -113,17 +113,17 @@ public class Battle implements Skill {
             if(character.getMaxHp() <= character.getHp()+20){
                 character.setFullHp();
                 character.drinkPotion();
-                System.out.println("\n 꼴~깍 \n");
+                System.out.println("\n[꼴~깍]");
                 System.out.println("체력이 모두 회복되었습니다.");
-                System.out.println(character.getName() + " Hp : " + character.getHp());
+                System.out.println("[ " + character.getName() + " ] Hp : " + character.getHp());
                 System.out.println("포션이 " + character.getpotionNum() + " 개 남았습니다.\n");
             /* 체력 회복 후 현재 체력이 최대 체력을 넘지 않을 시 */
             }else{
-                System.out.println("\n 꼴~깍 \n");
+                System.out.println("\n[꼴~깍]");
                 character.setHp(20);
                 character.drinkPotion();
                 System.out.println("체력이 20 회복되었습니다.");
-                System.out.println(character.getName() + " Hp : " + character.getHp());
+                System.out.println("[ " + character.getName() + " ] Hp : " + character.getHp());
                 System.out.println("포션이 " + character.getpotionNum() + " 개 남았습니다.\n");
             }
         }
@@ -131,14 +131,14 @@ public class Battle implements Skill {
 
     /* 도망치기 메소드 */
     public void escape(){
-        System.out.println("\n무사히 도망쳤다!\n");
+        System.out.println("\n[무사히 도망쳤다!]");
     }
 
     @Override
     public void useSkill(Character character, Monster monster) {
         if (character.getMp() >= 30) {
             int damage = character.getAttack() * 2;
-            System.out.println("\n스킬사용! " + damage + " 데미지가 들어갑니다.\n");
+            System.out.println("\n[스킬사용!]\n" + damage + " 데미지를 입혔습니다.\n");
             newMonsterHp -= damage;
             character.setMp(-30);
 
@@ -150,8 +150,8 @@ public class Battle implements Skill {
                     System.exit(0);
                 /* 몬스터 처치 시 */
                 }else{
-                    System.out.println(character.getName() + " hp : " + character.getHp());
-                    System.out.println(character.getName() + " mp : " + character.getMp());
+                    System.out.println("[ " + character.getName() + " ] hp : " + character.getHp());
+                    System.out.println("[ " + character.getName() + " ] mp : " + character.getMp());
                     System.out.println("");
 
                     System.out.println(monster.getName() + "를 물리쳤습니다.");
@@ -166,8 +166,8 @@ public class Battle implements Skill {
                 }
             }else{
                 /* 캐릭터의 공격 후 캐릭터와 몬스터의 현재 피 출력 */
-                System.out.println(character.getName() + " Hp : " + character.getHp());
-                System.out.println(character.getName() + " Mp : " + character.getMp());
+                System.out.println("[ " + character.getName() + " ] Hp : " + character.getHp());
+                System.out.println("[ " + character.getName() + " ] Mp : " + character.getMp());
                 System.out.println(monster.getName() + " Hp : " + newMonsterHp);
                 monsterTurn();
             }
@@ -185,8 +185,8 @@ public class Battle implements Skill {
             System.out.println("캐릭터가 사망하였습니다.\n");
         }else{
             /* 몬스터의 공격 후 캐릭터와 몬스터의 현재 피 출력 */
-            System.out.println(character.getName() + " Hp : " + character.getHp());
-            System.out.println(character.getName() + " Mp : " + character.getMp());
+            System.out.println("[ " + character.getName() + " ] Hp : " + character.getHp());
+            System.out.println("[ " + character.getName() + " ] Mp : " + character.getMp());
             System.out.println(monster.getName() + " Hp : " + newMonsterHp);
             System.out.println("");
         }

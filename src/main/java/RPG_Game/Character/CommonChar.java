@@ -34,7 +34,7 @@ public class CommonChar {
 
     public void displayInfo() {
         System.out.println("~~~~~~ 캐릭터 정보 ~~~~~~");
-        System.out.println("이름 : " + name);
+        System.out.println("직업 : " + name);
         System.out.println("체력 : " + hp+" / "+maxHp);
         System.out.println("마나 : "+mp+" / "+maxMp);
         System.out.println("포션 개수 : " + potionNum);
@@ -43,7 +43,7 @@ public class CommonChar {
         System.out.println("레벨 : " + level);
         System.out.println("돈 : " + money);
         System.out.println("무기 레벨 = " + weaponLv);
-        System.out.println("샤우팅 : " + shouting);
+        System.out.println("레벨업 효과음 : " + shouting);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~\n");
     }
 }
